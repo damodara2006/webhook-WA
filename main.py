@@ -13,19 +13,7 @@ def verify():
 
 @app.post("/webhook")
 def events():
-    data = request.get_json()
-
-    try:
-        value = data["entry"][0]["changes"][0]["value"]
-        name = value["contacts"][0]["profile"]["name"]
-        wa_id = value["contacts"][0]["wa_id"]
-        text = value["messages"][0]["text"]["body"]
-
-        print(f"✅ New message from {name} ({wa_id}): {text}")
-
-    except Exception as e:
-        print("⚠️ Unknown webhook format:", data)
-
+    print("✅ RAW BODY:", request.data.decode("utf-8"))
     return "OK", 200
 
 @app.get("/")
