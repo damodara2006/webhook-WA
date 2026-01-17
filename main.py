@@ -14,6 +14,18 @@ def webhook():
     print("✅ WEBHOOK HIT:", request.data.decode("utf-8"))
     return "OK", 200
 
+@app.get("/privacy")
+def privacy():
+    return "Privacy Policy - Test App", 200
+
+@app.get("/terms")
+def terms():
+    return "Terms of Service - Test App", 200
+
+@app.get("/delete-data")
+def delete_data():
+    return "To delete your data, contact: damodara2006@gmail.com", 200
+
 
 @app.get("/")
 def home():
