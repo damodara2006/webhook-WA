@@ -17,22 +17,27 @@ def webhook():
 @app.get("/privacy")
 def privacy():
     return """
-    Privacy Policy
+    <html>
+      <head><title>Privacy Policy</title></head>
+      <body>
+        <h1>Privacy Policy</h1>
+        <p>This app uses WhatsApp Cloud API to receive and send messages.</p>
+        <p>We may temporarily process message content to generate automated replies.</p>
+        <p>We do not sell or share user data with third parties.</p>
+        <p>Data is used only to provide support responses and improve the service.</p>
 
-    This app uses WhatsApp Cloud API to receive and send messages.
-    We may temporarily process message content to generate automated replies.
-    We do not sell or share user data with third parties.
-    Data is used only to provide support responses and improve the service.
+        <h2>Data Retention</h2>
+        <p>Messages may be stored for debugging and support purposes.</p>
 
-    Data Retention:
-    Messages may be stored for debugging and support purposes.
+        <h2>User Rights</h2>
+        <p>Users can request deletion of their data using the delete-data page.</p>
 
-    User Rights:
-    Users can request deletion of their data using the delete-data page.
-
-    Contact:
-    Email: damodara2006@gmail.com
+        <h2>Contact</h2>
+        <p>Email: damodara2006@gmail.com</p>
+      </body>
+    </html>
     """, 200
+
 
 @app.get("/terms")
 def terms():
