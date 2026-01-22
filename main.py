@@ -16,7 +16,23 @@ def webhook():
 
 @app.get("/privacy")
 def privacy():
-    return "Privacy Policy - Test App", 200
+    return """
+    Privacy Policy
+
+    This app uses WhatsApp Cloud API to receive and send messages.
+    We may temporarily process message content to generate automated replies.
+    We do not sell or share user data with third parties.
+    Data is used only to provide support responses and improve the service.
+
+    Data Retention:
+    Messages may be stored for debugging and support purposes.
+
+    User Rights:
+    Users can request deletion of their data using the delete-data page.
+
+    Contact:
+    Email: damodara2006@gmail.com
+    """, 200
 
 @app.get("/terms")
 def terms():
